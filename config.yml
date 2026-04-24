@@ -1,0 +1,76 @@
+username: Bahryz
+
+profile:
+  name: "Pedro Bahry"
+  tagline: "Software Engineering Student & SysOps @ Banco Bari"
+  company: "Banco Bari"
+  location: "Brazil"
+  bio: |
+    Building robust solutions with Clean Architecture and MVC.
+    Bridging mobile development and infrastructure — Flutter to DevOps.
+  philosophy: '"Good software solves real problems, beautifully."'
+
+social:
+  email: "phbahry@gmail.com"
+  linkedin: "pedro-bahry"
+  website: ""
+
+galaxy_arms:
+  - name: "Mobile"
+    color: "dendrite_violet"
+    items:
+      - "Flutter"
+      - "Kotlin"
+      - "Firebase"
+  - name: "Backend"
+    color: "synapse_cyan"
+    items:
+      - "C#"
+      - ".NET"
+      - "TypeScript"
+      - "MySQL"
+  - name: "Infra"
+    color: "axon_amber"
+    items:
+      - "Git"
+      - "Docker"
+      - "Linux"
+      - "SysOps"
+
+projects:
+  - repo: "KatsuMouley/Projeto-CEMIG"
+    arm: 1
+    description: "Battery health monitoring system for remote reclosers — predictive maintenance via IoT telemetry."
+  - repo: "Bahryz/ProjetoMed"
+    arm: 0
+    description: "Medical clinic app for patient and appointment management — Flutter + Firebase."
+  - repo: "Bahryz/RefatoracaoMVC"
+    arm: 2
+    description: "Full MVC architecture refactor applying Clean Architecture principles."
+
+theme:
+  void: "#080c14"
+  nebula: "#0f1623"
+  star_dust: "#1a2332"
+  synapse_cyan: "#00d4ff"
+  dendrite_violet: "#a78bfa"
+  axon_amber: "#ffb020"
+  text_bright: "#f1f5f9"
+  text_dim: "#94a3b8"
+  text_faint: "#64748b"
+
+stats:
+  metrics:
+    - "commits"
+    - "stars"
+    - "prs"
+    - "issues"
+    - "repos"
+
+languages:
+  exclude:
+    - "HTML"
+    - "CSS"
+    - "Shell"
+    - "Makefile"
+  max_display: 8
