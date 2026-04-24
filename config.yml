@@ -2,13 +2,14 @@ username: Bahryz
 
 profile:
   name: "Pedro Bahry"
-  tagline: "Software Engineering Student & SysOps @ Banco Bari"
+  tagline: "Software Engineering | SysOps @ Banco Bari | AI Specialist (Alura)"
   company: "Banco Bari"
   location: "Curitiba, PR — Brazil"
   bio: |
     Building robust solutions with Clean Architecture and MVC.
-    Bridging mobile development and infrastructure — Flutter to DevOps.
-  philosophy: '"Good software solves real problems, beautifully."'
+    Passionate about AI — studying LLMs, RAG architectures, and multi-agent systems.
+    Bridging mobile, backend, and intelligent automation.
+  philosophy: '"The future belongs to engineers who build with intelligence."'
 
 social:
   email: "phbahry@gmail.com"
@@ -29,14 +30,15 @@ galaxy_arms:
       - ".NET"
       - "TypeScript"
       - "MySQL"
-  - name: "Infra"
+  - name: "AI & Automation"
     color: "axon_amber"
     items:
-      - "Git"
-      - "Docker"
+      - "Python"
+      - "LLMs"
+      - "RAG"
+      - "Copilot Studio"
       - "Kubernetes"
       - "AWS"
-      - "SysOps"
 
 projects:
   - repo: "KatsuMouley/Projeto-CEMIG"
