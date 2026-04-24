@@ -4,7 +4,7 @@ profile:
   name: "Pedro Bahry"
   tagline: "Software Engineering Student & SysOps @ Banco Bari"
   company: "Banco Bari"
-  location: "Brazil"
+  location: "Curitiba, PR — Brazil"
   bio: |
     Building robust solutions with Clean Architecture and MVC.
     Bridging mobile development and infrastructure — Flutter to DevOps.
@@ -12,7 +12,7 @@ profile:
 
 social:
   email: "phbahry@gmail.com"
-  linkedin: "pedro-bahry"
+  linkedin: "pedro-bahry-864b40305"
   website: ""
 
 galaxy_arms:
@@ -34,7 +34,8 @@ galaxy_arms:
     items:
       - "Git"
       - "Docker"
-      - "Linux"
+      - "Kubernetes"
+      - "AWS"
       - "SysOps"
 
 projects:

@@ -42,7 +42,7 @@ Bridging mobile development and infrastructure — Flutter to DevOps.
   <a href="mailto:phbahry@gmail.com">
     <img src="https://img.shields.io/badge/-Email-080c14?style=for-the-badge&logo=gmail&logoColor=00d4ff" alt="Email"/>
   </a>
-  <a href="https://www.linkedin.com/in/pedro-bahry/">
+  <a href="https://www.linkedin.com/in/pedro-bahry-864b40305/">
     <img src="https://img.shields.io/badge/-LinkedIn-080c14?style=for-the-badge&logo=linkedin&logoColor=a78bfa" alt="LinkedIn"/>
   </a>
 </div>
