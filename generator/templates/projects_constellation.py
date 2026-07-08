@@ -191,40 +191,42 @@ def _build_project_card(i, proj, arm, color, card_width, card_x, theme):
     desc_lines = wrap_text(desc, max_chars)
 
     delay = f"{i * 0.3}s"
+    repo_url = f"https://github.com/{proj['repo']}"
 
     card_parts = []
-    card_parts.append(f'  <g opacity="0" style="animation: card-appear 0.6s ease {delay} forwards">')
+    card_parts.append(f'  <a href="{esc(repo_url)}" target="_blank" style="text-decoration: none;">')
+    card_parts.append(f'    <g opacity="0" style="animation: card-appear 0.6s ease {delay} forwards; cursor: pointer;">')
 
     # Card container
     card_parts.append(
-        f'    <rect x="{card_x}" y="55" width="{card_width}" height="140" rx="8" ry="8" '
+        f'      <rect x="{card_x}" y="55" width="{card_width}" height="140" rx="8" ry="8" '
         f'fill="url(#card-bg-{i})" stroke="{theme["star_dust"]}" stroke-width="1"/>'
     )
 
     # Nebula wisps (clipped inside card)
-    card_parts.append(f'    <g clip-path="url(#card-clip-{i})">')
+    card_parts.append(f'      <g clip-path="url(#card-clip-{i})">')
     card_parts.append(
-        f'      <circle cx="{card_x + card_width * 0.3}" cy="90" r="50" '
+        f'        <circle cx="{card_x + card_width * 0.3}" cy="90" r="50" '
         f'fill="{color}" opacity="0.025" filter="url(#card-nebula)"/>'
     )
     card_parts.append(
-        f'      <circle cx="{card_x + card_width * 0.7}" cy="150" r="40" '
+        f'        <circle cx="{card_x + card_width * 0.7}" cy="150" r="40" '
         f'fill="{color}" opacity="0.03" filter="url(#card-nebula)"/>'
     )
     # Scan line inside card
     card_parts.append(
-        f'      <rect x="{card_x}" y="55" width="{card_width}" height="2" '
+        f'        <rect x="{card_x}" y="55" width="{card_width}" height="2" '
         f'fill="{color}" opacity="0.1">'
         f'<animateTransform attributeName="transform" type="translate" '
         f'from="0 0" to="0 140" dur="6s" repeatCount="indefinite"/>'
         f'</rect>'
     )
-    card_parts.append('    </g>')
+    card_parts.append('      </g>')
 
     # Star indicator — orbital ring + glow + core + center
     # Orbital ring (rotating dashed circle)
     card_parts.append(
-        f'    <circle cx="{card_cx}" cy="85" r="14" fill="none" '
+        f'      <circle cx="{card_cx}" cy="85" r="14" fill="none" '
         f'stroke="{color}" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.5">'
         f'<animateTransform attributeName="transform" type="rotate" '
         f'from="0 {card_cx} 85" to="360 {card_cx} 85" dur="12s" repeatCount="indefinite"/>'
@@ -232,12 +234,12 @@ def _build_project_card(i, proj, arm, color, card_width, card_x, theme):
     )
     # Glow halo
     card_parts.append(
-        f'    <circle cx="{card_cx}" cy="85" r="8" fill="{color}" '
+        f'      <circle cx="{card_cx}" cy="85" r="8" fill="{color}" '
         f'opacity="0.15" filter="url(#proj-glow-{i})"/>'
     )
     # Pulsing core
     card_parts.append(
-        f'    <circle cx="{card_cx}" cy="85" r="5" fill="{color}" opacity="0.7">'
+        f'      <circle cx="{card_cx}" cy="85" r="5" fill="{color}" opacity="0.7">'
         f'<animate attributeName="opacity" values="0.5;0.9;0.5" dur="3s" '
         f'begin="{delay}" repeatCount="indefinite"/>'
         f'<animate attributeName="r" values="4.5;5.5;4.5" dur="3s" '
@@ -246,13 +248,22 @@ def _build_project_card(i, proj, arm, color, card_width, card_x, theme):
     )
     # White center dot
     card_parts.append(
-        f'    <circle cx="{card_cx}" cy="85" r="2" fill="#ffffff" opacity="0.9"/>'
+        f'      <circle cx="{card_cx}" cy="85" r="2" fill="#ffffff" opacity="0.9"/>'
     )
+
+    # Ajuste dinâmico do tamanho da fonte com base no comprimento do nome do repositório
+    font_size = 14
+    if len(repo_name) > 30:
+        font_size = 9
+    elif len(repo_name) > 22:
+        font_size = 11
+    elif len(repo_name) > 16:
+        font_size = 12
 
     # Project name (centered)
     card_parts.append(
-        f'    <text x="{card_cx}" y="111" fill="{theme["text_bright"]}" '
-        f'font-size="14" font-weight="bold" font-family="sans-serif" '
+        f'      <text x="{card_cx}" y="111" fill="{theme["text_bright"]}" '
+        f'font-size="{font_size}" font-weight="bold" font-family="sans-serif" '
         f'text-anchor="middle">{esc(repo_name)}</text>'
     )
 
@@ -260,7 +271,7 @@ def _build_project_card(i, proj, arm, color, card_width, card_x, theme):
     for j, line in enumerate(desc_lines[:2]):
         y_pos = 129 + j * 15
         card_parts.append(
-            f'    <text x="{card_cx}" y="{y_pos}" fill="{theme["text_dim"]}" '
+            f'      <text x="{card_cx}" y="{y_pos}" fill="{theme["text_dim"]}" '
             f'font-size="11" font-family="sans-serif" '
             f'text-anchor="middle">{esc(line)}</text>'
         )
@@ -270,16 +281,17 @@ def _build_project_card(i, proj, arm, color, card_width, card_x, theme):
     tag_width = len(tag_text) * 7 + 16
     tag_x = card_cx - tag_width / 2
     card_parts.append(
-        f'    <rect x="{tag_x}" y="163" width="{tag_width}" height="18" rx="9" ry="9" '
+        f'      <rect x="{tag_x}" y="163" width="{tag_width}" height="18" rx="9" ry="9" '
         f'fill="{color}" opacity="0.12"/>'
     )
     card_parts.append(
-        f'    <text x="{card_cx}" y="175" fill="{color}" '
+        f'      <text x="{card_cx}" y="175" fill="{color}" '
         f'font-size="9" font-family="monospace" text-anchor="middle" '
         f'opacity="0.85">{esc(tag_text)}</text>'
     )
 
-    card_parts.append('  </g>')
+    card_parts.append('    </g>')
+    card_parts.append('  </a>')
     return "\n".join(card_parts)
 
 
