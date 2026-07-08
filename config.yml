@@ -2,13 +2,13 @@ username: Bahryz
 
 profile:
   name: "Pedro Bahry"
-  tagline: "Software Engineering | SysOps @ Banco Bari | AI Specialist (Alura)"
-  company: "Banco Bari"
+  tagline: "Software Engineering | AI Engineering Intern @ NTT DATA | AI Specialist (Alura)"
+  company: "NTT DATA"
   location: "Curitiba, PR — Brazil"
   bio: |
-    Building robust solutions with Clean Architecture and MVC.
-    Passionate about AI — studying LLMs, RAG architectures, and multi-agent systems.
-    Bridging mobile, backend, and intelligent automation.
+    AI Engineering Intern at NTT DATA, building intelligent systems.
+    Passionate about NLP, LLMs, RAG architectures, and multi-agent systems.
+    Bridging geophysics background with cutting-edge AI development.
   philosophy: '"The future belongs to engineers who build with intelligence."'
 
 social:
@@ -36,20 +36,21 @@ galaxy_arms:
       - "Python"
       - "LLMs"
       - "RAG"
+      - "HuggingFace"
       - "Copilot Studio"
       - "Kubernetes"
       - "AWS"
 
 projects:
+  - repo: "Bahryz/E-se-um-GEOFISICO-quissese-virar-DEV-"
+    arm: 2
+    description: "AI career mentor chatbot for geophysicists — LangChain + Gemini with session memory."
+  - repo: "Bahryz/hugging-face-practice"
+    arm: 2
+    description: "Zero-shot transaction classifier — HuggingFace mDeBERTa multilingual NLI pipeline."
   - repo: "KatsuMouley/Projeto-CEMIG"
     arm: 1
     description: "Battery health monitoring system for remote reclosers — predictive maintenance via IoT telemetry."
-  - repo: "Bahryz/ProjetoMed"
-    arm: 0
-    description: "Medical clinic app for patient and appointment management — Flutter + Firebase."
-  - repo: "Bahryz/RefatoracaoMVC"
-    arm: 2
-    description: "Full MVC architecture refactor applying Clean Architecture principles."
 
 theme:
   void: "#080c14"
